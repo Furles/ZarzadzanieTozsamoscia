@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<!-podłączenie arkusza CSS->
+  <link rel="stylesheet" type="text/css" href="login.css">
+<!-Podłączenie pliku JS->
+  <script src="login.js"></script>		<!-mmm->
+  <meta charset="UTF-8">
+  <title>Login</title>
+</head>
+
+<body style="background-color:#40e0d0">
+  <main id="main-holder">
+    <h1 id="login-header"><p style="font-family:'Georgia'">Login</p></h1>
+
+<!-formularz logowania z polami ->
+    <form id="login-form">
+      <input type="text" name="username" id="username-field" class="login-form-field" placeholder="Username">
+      <input type="password" name="password" id="password-field" class="login-form-field" placeholder="Password">
+      <input type="submit" value="Login" id="login-form-submit">
+<!-komunikat o błędnym logowaniu->
+      <div id="login-error-msg">Invalid username or password</div>
+    </form>
+
+  </main>
+  <script src="login.js"></script>
+</body>
+
+</html>
