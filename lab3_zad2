@@ -1,0 +1,33 @@
+import random
+import string
+
+
+def generator_hasla():
+    male_litery = string.ascii_lowercase
+    wielkie_litery = string.ascii_uppercase
+    cyfry = string.digits
+    znaki_specjalne = string.punctuation
+
+    dlugosc_hasla = random.randint(8, 20)
+
+    # List of forbidden words
+    zakazane_slowa = ["password", "123456", "qwerty", "example"]
+
+    while True:
+        haslo = (
+                random.choice(male_litery) +
+                random.choice(wielkie_litery) +
+                random.choice(cyfry) +
+                random.choice(znaki_specjalne) +
+                ''.join(random.choice(male_litery + wielkie_litery + cyfry + znaki_specjalne) for _ in
+                        range(dlugosc_hasla - 4))
+        )
+
+        if all(word.lower() not in haslo.lower() for word in zakazane_slowa):
+            haslo = ''.join(random.sample(haslo, len(haslo)))
+
+            print(f"Secure Password: {haslo}")
+            break
+
+
+generator_hasla()
